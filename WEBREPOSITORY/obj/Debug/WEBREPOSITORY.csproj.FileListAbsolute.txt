@@ -1,0 +1,10 @@
+C:\Users\vishw\Documents\Visual Studio 2015\Projects\PolicySubscription\WEBREPOSITORY\bin\Debug\WEBREPOSITORY.dll.config
+C:\Users\vishw\Documents\Visual Studio 2015\Projects\PolicySubscription\WEBREPOSITORY\bin\Debug\WEBREPOSITORY.dll
+C:\Users\vishw\Documents\Visual Studio 2015\Projects\PolicySubscription\WEBREPOSITORY\bin\Debug\WEBREPOSITORY.pdb
+C:\Users\vishw\Documents\Visual Studio 2015\Projects\PolicySubscription\WEBREPOSITORY\bin\Debug\EntityFramework.dll
+C:\Users\vishw\Documents\Visual Studio 2015\Projects\PolicySubscription\WEBREPOSITORY\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\vishw\Documents\Visual Studio 2015\Projects\PolicySubscription\WEBREPOSITORY\bin\Debug\EntityFramework.xml
+C:\Users\vishw\Documents\Visual Studio 2015\Projects\PolicySubscription\WEBREPOSITORY\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\vishw\Documents\Visual Studio 2015\Projects\PolicySubscription\WEBREPOSITORY\obj\Debug\WEBREPOSITORY.dll
+C:\Users\vishw\Documents\Visual Studio 2015\Projects\PolicySubscription\WEBREPOSITORY\obj\Debug\WEBREPOSITORY.pdb
+C:\Users\vishw\Documents\Visual Studio 2015\Projects\PolicySubscription\WEBREPOSITORY\obj\Debug\WEBREPOSITORY.csprojResolveAssemblyReference.cache

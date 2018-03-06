@@ -1,0 +1,15 @@
+﻿@model List<PolicySubscription.ServiceReference1.CtryPersonClient>
+
+@{
+    ViewBag.Title = "GetCountryData";
+}
+
+<h2>GetCountryData</h2>
+
+<div class="form-group">
+    
+    <div class="col-md-10">
+        @Html.DropDownList("Country", new SelectList(ViewBag.lstcountry, "Country"))
+       
+    </div>
+</div>

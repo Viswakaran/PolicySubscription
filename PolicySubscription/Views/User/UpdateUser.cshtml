@@ -1,0 +1,51 @@
+﻿@model WEBREPOSITORY.REPOSITORY.User
+
+@{
+    ViewBag.Title = "UpdateUser";
+}
+
+<h2>UpdateUser</h2>
+<div class="updateuser">
+    @using (Html.BeginForm())
+    { @Html.AntiForgeryToken();
+
+        <div class="form-horizontal">
+   
+            <div class="form-group">
+                @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "col-lg-2" })
+                <div class="col-lg-10">
+                    @Html.DisplayFor(modelItem => modelItem.UserID, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.PID, htmlAttributes: new { @class = "col-lg-2" })
+                <div class="col-lg-10">
+                    @Html.EditorFor(model => model.PID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.PID, " ", htmlAttributes: new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "col-lg-2" })
+                <div class="col-lg-10">
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Name, " ", htmlAttributes: new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "col-lg-2" })
+                <div class="col-lg-10">
+                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Address, " ", htmlAttributes: new { @class = "text-danger" })
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10">
+                    <input type="submit" class="btn btn-default" value="UpdateUser" />
+                </div>
+            </div>
+
+        </div>
+
+
+    }
+</div>

@@ -1,0 +1,94 @@
+﻿@model PolicySubscription.Models.Customer
+
+@{
+    ViewBag.Title = "Edit";
+}
+@{
+    var MyList = new List
+<SelectListItem>(){
+        new SelectListItem(){Value="1",Text="India"},
+        new SelectListItem(){Value="2",Text="UK"}
+
+    };
+}
+@{
+    var Mycity = new List<SelectListItem>()
+    {
+        new SelectListItem() {Value ="1",Text="Hyderbad" },
+        new SelectListItem() {Value ="2",Text="Mahanagar" },
+        new SelectListItem() {Value ="3",Text="Delhi" }
+    };
+
+}
+<h2>Edit</h2>
+@using (Html.BeginForm(actionName: "Edit", controllerName: "Customer", method: FormMethod.Post))
+{
+    <table>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.CustomerID)</td>
+            
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(Model => Model.CompanyName)</td>
+            <td> @Html.TextBoxFor(Model => Model.CompanyName)</td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(Model => Model.ContactName)</td>
+            <td> @Html.TextBoxFor(Model => Model.ContactName)</td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(Model => Model.ContactTitle)</td>
+            <td> @Html.TextBoxFor(Model => Model.ContactTitle)</td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(Model => Model.Address)</td>
+            <td> @Html.TextBoxFor(Model => Model.Address)</td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(Model => Model.City)</td>
+            <td>@Html.DropDownListFor(Model => Model.City, Mycity)</td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(Model => Model.Region)</td>
+            <td>@Html.TextBoxFor(Model => Model.Region)</td>
+        </tr>
+        <tr>
+            <td> @Html.LabelFor(Model => Model.PostalCode)</td>
+            <td>@Html.TextBoxFor(Model => Model.PostalCode)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.Country)</td>
+            <td> @Html.DropDownListFor(Model => Model.Country, MyList)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.Phone)</td>
+            <td>@Html.TextBoxFor(Model => Model.Phone)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.Fax)</td>
+            <td>@Html.TextBoxFor(Model => Model.Fax)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(Model => Model.Password)</td>
+            <td> @Html.PasswordFor(Model => Model.Password)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.Label("Male")
+                @Html.RadioButtonFor(Model => Model.Gender, "Male", new { value = "Male" })
+            </td>
+            <td>
+                @Html.Label("Female")
+            @Html.RadioButtonFor(Model => Model.Gender, "Female", new { value = "Female" })
+        </td>
+    </tr>
+
+    <tr>
+        <td> @Html.LabelFor(Model => Model.Terms)</td>
+        <td> @Html.CheckBoxFor(Model => Model.Terms)</td>
+    </tr>
+
+
+</table>
+    <input type="submit" value="Submit" />
+}

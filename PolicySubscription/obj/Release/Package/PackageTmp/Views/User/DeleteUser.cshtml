@@ -1,0 +1,54 @@
+﻿@model WEBREPOSITORY.REPOSITORY.User
+
+@{
+    ViewBag.Title = "DeleteUser";
+}
+
+<h2>DeleteUser</h2>
+<p>Are you sure you want to delete</p>
+<div class="deleteUser">
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+
+        </tr>
+        <tr>
+            <th>
+                @Html.DisplayFor(model => model.UserID)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.PID)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayFor(model => model.Address)
+            </th>
+
+        </tr>
+
+    </table>
+    <div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken();
+            <div class="form-group">
+                <div class="col-lg-10">
+                    <input type="submit" class="btn btn-default" value="DeleteUser" />
+                </div>
+            </div>
+        }
+    </div>
+</div>

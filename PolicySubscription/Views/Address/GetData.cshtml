@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "GetData";
+}
+
+<h2>GetData</h2>
+<script src="~/scripts/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+    $(function(){
+        $("#Getcountries").click(function () {
+           
+            $.ajax(
+                {
+                    type: "GET",
+                    url:"@Url.Action("GetCountries", "Address")",
+                    dataType:"JSON",
+                    success: function (LstCountry) {
+                        $("#ddlcountry").empty();
+                        $("#ddlstate").empty();
+                        $.each(LstCountry, function (index, data) {
+                            $("#ddlcountry").append("<option value="+data+">"+data+"</option>");
+                        });
+                    },
+                    error: function (errormessage, xht, errorstatus) {
+                        console.log("error");
+                    },
+              });
+        });
+       
+       
+        $("#ddlcountry").on("change", function () {
+            var countryname = $("#ddlcountry").val();
+            var obj = { cname: countryname };
+            $.ajax(
+                {
+                    type: "POST",
+                    url:"@Url.Action("GetStates", "Address")",
+                dataType: "JSON",
+            data: JSON.stringify(obj),
+            contentType: "application/json; charset=utf-8",
+            processData: true,
+            success: function (responsedata) {
+                $("#ddlstate").empty();
+                    
+                $.each(responsedata, function (index, data) {
+                    $("#ddlstate").append("<option value=" + data + ">" + data + "</option>");
+                });
+            },
+            error: function (errormessage, xht, errorstatus) {
+                console.log("error");
+            },
+            });
+    });
+       
+    });
+
+</script>
+<style type="text/css">
+    #ddlcountry, #ddlstate{
+        width:10%;
+    }
+
+</style>
+
+<div class="container">
+    Countries:<select id="ddlcountry">select</select>
+    <input type="button" value="Submit" id="Getcountries"/>
+    States:<select id="ddlstate">select</select>
+</div>
+
